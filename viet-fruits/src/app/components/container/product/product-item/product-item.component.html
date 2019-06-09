@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <div class="container">
+    <div class="row">
+      <!-- section title -->
+      <div class="col-md-12" style="border-bottom: 1px solid #ccc;padding: 0px;margin: 40px 0px; position: relative;">
+        SẢN PHẨM HOT
+      </div>
+      <div class="item col-md-3 col-sm-6 col-xs-6" *ngFor="let p of product ">
+        <div *ngIf="p.hot">
+            <div class="product-item" >
+                <div class="">
+                  <img src="./assets/img/{{p.image}}" style="width: auto; height: 280px" alt="Berry Lace Dress">
+                  <div>
+                  </div>
+                </div>
+      
+                <h6 style="margin-top: 5PX">{{p.title}}</h6>
+                <div class="pi-price">{{p.price| number:0}} vnđ</div>
+                <br><hr>
+                <div>
+                    
+                <a href="javascript:;" class="btn add2cart"  routerLink="/cart"style="float: left;">
+                  <span style="font-size: 20PX; color: tomato;"><i class="fas fa-cart-plus"></i></span>
+                </a>
+                <a href="javascript:;" class="btn add2cart"  data-toggle="modal"  data-target="#myDetail" style="color:green ;float: right; margin-top:5px">
+                  Chi tiết sản phẩm</a>
+                </div>
+              </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+        <!-- section title -->
+        <div class="col-md-12" style="border-bottom: 1px solid #ccc;padding: 0px;margin: 40px 0px; position: relative;">
+            TẤT CẢ SẢN PHẨM
+        </div>
+        <div class="item col-md-3 col-sm-6 col-xs-6" *ngFor="let p of product">
+          
+            <div *ngIf="!p.hot">
+                <div class="product-item" >
+                    <div class="">
+                      <img src="./assets/img/{{p.image}}" style="width: auto; height: 280px" alt="Berry Lace Dress">
+                      <div>
+                      </div>
+                    </div>
+          
+                    <h6 style="margin-top: 5PX">{{p.title}}</h6>
+                    <div class="pi-price">{{p.price| number:0}} vnđ</div>
+                    <br><hr>
+                    <div>
+                        
+                    <a href="javascript:;" class="btn add2cart"  routerLink="/cart"style="float: left;">
+                      <span style="font-size: 20PX; color: tomato;"><i class="fas fa-cart-plus"></i></span>
+                    </a>
+                    <a href="javascript:;" class="btn add2cart"  routerLink="/product-detail"style="color:green ;float: right; margin-top:5px">Chi tiết sản phẩm</a>
+                    </div>
+                  </div>
+            </div>
+  
+        </div>
+      </div>
+  </div>
+  <div class="modal" id="myDetail">
+      <app-product-detail></app-product-detail>
+</div>
+     

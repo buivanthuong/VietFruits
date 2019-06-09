@@ -1,0 +1,148 @@
+<header style="background : black; align-content: right;">
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg" style="width: 100%;">
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav" >
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item" >
+                    <a class="nav-link" style="color: white">
+                    Giao Hàng </a>
+                </li>
+                <li class="nav-item" data-toggle="modal"  data-target="#mylogin">
+                    <a class="nav-link" style="color: white">
+                     Cam Kết Chất Lượng</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" style="color: white">
+                    Chính sách bảo mật Về Viet Fruits</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" style="color: white">
+                      Tin Tức</a>
+                  </li>
+                  <li class="nav-item" >
+                      <a class="nav-link" style="color: white">
+                        Liên Hệ</a>
+                    </li>
+                        
+              </ul>
+            </div>
+            <!-- Collapsible content -->
+          </nav>
+    
+    </div>
+</div>
+</header>
+  <!-- ---------------------------------------------------------head----------------------------------------------- -->
+  <header style="clear: both;  background:#4CAF50 ;font-size: 18px">
+      <div class="container">
+          <div class="row">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark indigo" style="height: 150px; width:100% ;">
+      
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="javascript:;;" [routerLink]="[ '/' ]">  <img src="./assets/img/logo.png" alt="" width="auto" height="130"></a>
+      
+        <app-search></app-search>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav" style="background:#4CAF50; float: right;">
+      
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item" >
+                <a class="nav-link" style="color: white;font-size: 16px">
+                <i class="fa fa-user mr-1"></i>Bùi văn thương</a>
+            </li>
+            <!-- <li class="nav-item" data-toggle="modal"  data-target="#mylogin">
+                <a class="nav-link" style="color: white">
+                <i class="fa fa-sign-in mr-1"></i> Đăng ký tài khoản</a>
+            </li> -->
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;font-size: 16px">
+                  Giỏ hàng <i class="fas fa-shopping-cart"></i>
+                  <span class="badge badge-pill badge-danger">2</span>
+                </a>
+            </li>
+                    
+          </ul>
+        </div>
+        <!-- Collapsible content -->
+      
+      </nav>
+      <!--/.Navbar-->
+    </div>
+  </div>
+      </header>
+    <!-- ---------------------------------------------------------head----------------------------------------------- -->
+  <header>
+      <!--Navbar-->
+      <div class="container">
+          <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-dark indigo" style="height: 50px; background:white;;">
+      
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav" style="background:white; ">
+      
+      
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" >
+                  <div class="dropdown">
+                      <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Trái cây theo vùng miền  <span class="glyphicon glyphicon-chevron-down"></span></button>
+                      <div class="dropdown-content">
+                        <a href="#">Đà lạt</a>
+                        <a href="#">Miền tây</a>
+                        <a href="#">Tây nguyên</a>
+                        <a href="#">Miền bắc</a>
+                        <a href="#">Miền nam</a>
+                      </div>
+                    </div>  
+                </a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" style="color:#1B5E20">
+                    <div class="dropdown">
+                        <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Trái cây theo mùa </button>
+                        <div class="dropdown-content">
+                          <a href="#">Mùa xuân</a>
+                          <a href="#">Mùa hạ</a>
+                          <a href="#">Mùa thu</a>
+                          <a href="#">Mùa đông</a>
+                        </div>
+                      </div>  
+                  </a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" style="color:#1B5E20">
+                  <div class="dropdown">
+                      <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Thể loại trái cây </button>
+                      <div class="dropdown-content">
+                        <a href="#">Trái Cây Nhập</a>
+                        <a href="#">Trái Cây Việt</a>
+                        <a href="#">Trái Cây Sấy</a>
+                        <a href="#">Muối Chấm</a>
+                      </div>
+                    </div>  
+                </a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" style="color:#1B5E20">
+                    <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Sản phẩm hot </button></a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" style="color:#1B5E20">
+                    <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Sản phẩm yêu thích </button></a>
+              </li>
+              <li class="nav-item" >
+                  <a class="nav-link" routerLink="/admin" style="color:#1B5E20">
+                    <button class="dropbtn dropdown-toggle" style="color:#1B5E20">Lựa chọn của VietFruits </button></a>
+              </li>
+          </ul>
+        </div>
+        <!-- Collapsible content -->
+      </nav>
+      <!--/.Navbar-->
+    </div>
+  </div>
+</header>
