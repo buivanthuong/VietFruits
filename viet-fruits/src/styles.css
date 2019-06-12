@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+@import '~ngx-toastr/toastr.css';
+
 container-fluid {
     margin: 0;
     padding: 0;
  }
+body {
+  margin: 0;
+}
+#toast-container > div {
+    opacity:1;
+    }

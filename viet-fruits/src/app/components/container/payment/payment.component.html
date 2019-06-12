@@ -1,46 +1,143 @@
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="container">
-  <div class='row'>
-      <div class='col-md-4'></div>
-      <div class='col-md-4'>
-        <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-        <form accept-charset="UTF-8" action="/" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" /></div>
-          <div class='form-row'>
-            <div class='col-xs-12 form-group required'>
-              <label class='control-label'>Số điện thoại</label>
-              <input class='form-control' size='4' type='text'>
-            </div>
-          </div>
-          <div class='form-row'>
-            <div class='col-xs-12 form-group card required'>
-              <label class='control-label'>Dịa chỉ giao hàng</label>
-              <input autocomplete='off' class='form-control card-number' size='20' type='text'>
-            </div>
-          </div>
-          <div class='form-row'>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="main">
+                <div class="main-header">
+                  
+                    <ul class="breadcrumb">
+                      <li class="breadcrumb-item">
+                            <a class="nav-link" routerLink="/cart" style="color: rgb(67, 79, 253);">
+                                Giỏ hàng
+                              </a>
+                      </li>
+                           <i class='fas fa-angle-right' style='font-size:24px' style="margin-top: 14px"></i>
+               
+                          <li >
+                                <a class="nav-link" routerLink="/payment" style="color: rgb(67, 79, 253);">
+                                    <b>Thông Tin Nhận Hàng </b>
+                                </a>
+                            
             
-          </div>
-          <div class='form-row'>
-            <div class='col-md-12'>
-              <div class='form-control total btn btn-info'>
-                Tổng tiền:
-                <span class='amount'>31.900</span>
-              </div>
+                          </li>
+                          <i class='fas fa-angle-right' style='font-size:24px' style="margin-top: 14px"></i>
+                          <li >
+                                <a class="nav-link" routerLink="/payment-detail" style="color: rgb(76, 76, 78);">
+                                    Chọn Phương Thức Thanh Toán
+
+                                </a>
+                            
+                          </li>
+                                          
+                    </ul>
+                  
+                </div>
+                <div class="main-content">
+                        <input type="text" class="form-control" id="usr" placeholder="Họ và tên" style="margin-top: 35px">
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="usr" placeholder="Email">
+                              </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="usr" placeholder="Điện thoại">
+                              </div>
+                        </div>
+                        <input type="text" class="form-control" id="usr" placeholder="Dịa chỉ" style="margin-top: 15px">
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-md-4" >
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="width: 100%">
+                                    Tỉnh/Thành phố
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="width: 100%">
+                                    Quận huyện
+                                  </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="width: 100%">
+                                    Phường
+                                </button>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="main-footer" style="margin-top: 35px">
+                        <div class="col-md-12" style="border-bottom: 1px solid rgb(231, 231, 231);padding: 0px;margin: 15px 0px; position: relative;">
+                          </div>
+                      <!-- END PRODUCT -->
+                  <div class="pull-right">
+                      <a href="" class="btn btn-success pull-right" routerLink="/cart">Giỏ Hàng</a>
+                      &nbsp;&nbsp;
+                      <a href="" class="btn btn-primary pull-right" routerLink="/payment-detail">Phương thức thanh toán</a>
+                  </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class='form-row'>
-            <div class='col-md-12 form-group'>
-              <button class='form-control btn btn-primary submit-button' type='submit'>Thanh toán »</button>
+    
+            <div class="col-md-5">
+                <div class="container">
+                    <div class="card shopping-cart">
+                             <div class="card-header bg-dark text-light">
+                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                 Danh sách sản phẩm
+                                 <div class="clearfix"></div>
+                             </div>
+                             <div class="card-body">
+                                     <!-- PRODUCT -->
+                                     <div class="row" *ngFor="let p of product">
+                                       
+                                         <div class="col-12 col-sm-12 col-md-3   text-center">
+                                                 <img class="img-responsive" src="./assets/img/{{p.image}}"  alt="prewiew" width="90" height="60">
+                                         </div>
+                                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                                             <h6 class="product-name"><strong>{{p.title}}</strong></h6>
+                                             <h6>Giá: {{p.price| number:0}} vnđ</h6>
+                                         </div>
+                                         <div class="col-md-12" style="border-bottom: 1px solid rgb(231, 231, 231);padding: 0px;margin: 15px 0px; position: relative;">
+                                         </div>
+                                     </div>
+                                     <!-- END PRODUCT -->
+                                     <div class="row" style="margin-top: 15px">
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="usr" placeholder="Mã giảm giá">
+                                          </div>
+                                        <div class="col-md-4">
+                                            <a href="" class="btn btn-primary pull-right">Nhập</a>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-12" style="border-bottom: 1px solid rgb(231, 231, 231);padding: 0px;margin: 15px 0px; position: relative;">
+                                      </div>
+                                    <div class="row" style="margin-top: 15px">
+                                        <div class="col-md-8">
+                                            Tổng tiền hàng
+                                          </div>
+                                        <div class="col-md-4">
+                                            {{tongCong| number:0}} vnđ
+                                          </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 15px">
+                                        <div class="col-md-8">
+                                            Phí giao hàng
+                                          </div>
+                                        <div class="col-md-4">
+                                            -
+                                          </div>
+                                    </div>
+                                    <div class="col-md-12" style="border-bottom: 1px solid rgb(231, 231, 231);padding: 0px;margin: 15px 0px; position: relative;">
+                                      </div>
+                             </div>
+                             <div class="card-footer">
+                                 <div class="pull-right" style="margin: 15px">
+                                     <div class="pull-right" style="margin: 5px">
+                                         Tổng cộng: <b>{{tongCong| number:0}} vnđ</b>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                 </div>
             </div>
-          </div>
-          <div class='form-row'>
-            <div class='col-md-12 error form-group hide'>
-              
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class='col-md-4'></div>
-  </div>
-</div>
+        </div>
+    </div>
+    <br>

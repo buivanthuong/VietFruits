@@ -13,6 +13,7 @@ import { PaymentComponent } from './components/container/payment/payment.compone
 import { ProductItemComponent } from './components/container/product/product-item/product-item.component';
 import { ProductDetailComponent } from './components/container/product/product-detail/product-detail.component';
 import { ProductCartComponent } from './components/container/product/product-cart/product-cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProductService } from './services/product.service';
 
@@ -38,7 +39,7 @@ import { SliderComponent } from './components/header/slider/slider.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot()
   ],

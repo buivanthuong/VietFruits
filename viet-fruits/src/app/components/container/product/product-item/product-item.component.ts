@@ -9,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
-
   products: Product[];
   searchItem : string;
   artists:any = [];
@@ -31,16 +30,15 @@ export class ProductItemComponent implements OnInit {
     this.product = this.productService.products;
   }
  
-  cartItem: any;
-  listCartItem: any = [];
-
-  addProductToCart(product) {
-    //check cart
-    this.addItemCart(product)
+  public clickBuy(p:Product) {
+    this.toastrService.showSuccess("Đã thêm vào giỏ hàng, vui lòng tới giỏ hàng để thanh toán" , p.title);
+    this.productService.products.forEach(element => {
+      if(element.id == p.id){
+        element.number="1";
+        element.buy = true
+        this.productService.upCountCart();
+      }
+    });
   }
-  addItemCart( product: Product){
-   
-  }
-
-
+  
 }

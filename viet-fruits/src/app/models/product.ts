@@ -7,6 +7,7 @@ export interface Product {
     avgStars?: string;
     buy?: boolean;
     hot?: boolean;
+    number?:string;
     quantitySold?: string;
     changedBy?: string;
     changedOn?: string;

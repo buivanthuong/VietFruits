@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <div class="container">
     <div class="row">
       <!-- section title -->
@@ -19,11 +18,14 @@
                 <br><hr>
                 <div>
                     
-                <a href="javascript:;" class="btn add2cart"  routerLink="/cart"style="float: left;">
+                <a href="javascript:;" class="btn add2cart"  (click)="clickBuy(p)" style="float: left;">
                   <span style="font-size: 20PX; color: tomato;"><i class="fas fa-cart-plus"></i></span>
                 </a>
-                <a href="javascript:;" class="btn add2cart"  data-toggle="modal"  data-target="#myDetail" style="color:green ;float: right; margin-top:5px">
+                <a href="javascript:;" class="btn add2cart"  data-toggle="modal"  [attr.data-target]="'#my' + p.id" style="color:green ;float: right; margin-top:5px">
                   Chi tiết sản phẩm</a>
+                </div>
+                <div class="modal" id="my{{p.id}}">
+                  <app-product-detail [p]="p"></app-product-detail>
                 </div>
               </div>
         </div>
@@ -50,10 +52,14 @@
                     <br><hr>
                     <div>
                         
-                    <a href="javascript:;" class="btn add2cart"  routerLink="/cart"style="float: left;">
+                    <a href="javascript:;" class="btn add2cart"  (click)="clickBuy(p)" style="float: left;">
                       <span style="font-size: 20PX; color: tomato;"><i class="fas fa-cart-plus"></i></span>
                     </a>
-                    <a href="javascript:;" class="btn add2cart"  routerLink="/product-detail"style="color:green ;float: right; margin-top:5px">Chi tiết sản phẩm</a>
+                    <a href="javascript:;" class="btn add2cart"  data-toggle="modal"  [attr.data-target]="'#my' + p.id" style="color:green ;float: right; margin-top:5px">
+                      Chi tiết sản phẩm</a>
+                    </div>
+                    <div class="modal" id="my{{p.id}}">
+                      <app-product-detail [p]="p"></app-product-detail>
                     </div>
                   </div>
             </div>
@@ -61,7 +67,5 @@
         </div>
       </div>
   </div>
-  <div class="modal" id="myDetail">
-      <app-product-detail></app-product-detail>
-</div>
+ 
      
